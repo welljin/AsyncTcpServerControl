@@ -11,15 +11,28 @@
  asyncSocketTcpServer1.SendAsync(socket,byte[]);
  
  用户自定义事件：
+ 
         //客户端连接
+        
          private void AsyncSocketTcpServer1_ClientConnected(object sender, TcpServerClientConnectedEventArgs e)
+         
         { 
+        
         }
+        
         //客户端断开连接
+        
         private void AsyncSocketTcpServer1_ClientDisconnected(object sender, TcpServerClientDisconnectedEventArgs e)
+        
         {           
+        
         }
+        
         //接收数据
+        
         private void AsyncSocketTcpServer1_ReceiveData(object sender, TcpServerReceiveDatadEventArgs e)
+        
         {         
+        
         }
+        

@@ -65,7 +65,6 @@ namespace TcpServer.AsyncSocketServer
         /// server port
         /// </summary>
         public int ServerPort { get; private set; }
-
         #endregion
 
         #region 构造函数

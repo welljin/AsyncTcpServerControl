@@ -28,15 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.Openbtn = new System.Windows.Forms.Button();
             this.Closebtn = new System.Windows.Forms.Button();
-            this.asyncSocketTcpServer1 = new AsyncTcpServer.AsyncSocketTcpServer();
+            this.asyncTcpServer1 = new AsyncTcpServer.AsyncTcpServer();
             this.SuspendLayout();
             // 
             // Openbtn
             // 
-            this.Openbtn.Location = new System.Drawing.Point(29, 12);
+            this.Openbtn.Location = new System.Drawing.Point(364, 12);
             this.Openbtn.Name = "Openbtn";
             this.Openbtn.Size = new System.Drawing.Size(75, 23);
             this.Openbtn.TabIndex = 3;
@@ -46,7 +45,7 @@
             // 
             // Closebtn
             // 
-            this.Closebtn.Location = new System.Drawing.Point(151, 12);
+            this.Closebtn.Location = new System.Drawing.Point(364, 41);
             this.Closebtn.Name = "Closebtn";
             this.Closebtn.Size = new System.Drawing.Size(75, 23);
             this.Closebtn.TabIndex = 4;
@@ -54,28 +53,22 @@
             this.Closebtn.UseVisualStyleBackColor = true;
             this.Closebtn.Click += new System.EventHandler(this.Closebtn_Click);
             // 
-            // asyncSocketTcpServer1
+            // asyncTcpServer1
             // 
-            this.asyncSocketTcpServer1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.asyncSocketTcpServer1.IsRunning = false;
-            this.asyncSocketTcpServer1.Location = new System.Drawing.Point(170, 110);
-            this.asyncSocketTcpServer1.Name = "asyncSocketTcpServer1";
-            this.asyncSocketTcpServer1.ServerAddress = ((System.Net.IPAddress)(resources.GetObject("asyncSocketTcpServer1.ServerAddress")));
-            this.asyncSocketTcpServer1.ServerPort = 11000;
-            this.asyncSocketTcpServer1.Size = new System.Drawing.Size(130, 17);
-            this.asyncSocketTcpServer1.TabIndex = 2;
-            this.asyncSocketTcpServer1.ClientConnected += new System.EventHandler<TcpServer.AsyncSocketServer.TcpServerClientConnectedEventArgs>(this.AsyncSocketTcpServer1_ClientConnected);
-            this.asyncSocketTcpServer1.ReceiveData += new System.EventHandler<TcpServer.AsyncSocketServer.TcpServerReceiveDatadEventArgs>(this.AsyncSocketTcpServer1_ReceiveData);
-            this.asyncSocketTcpServer1.ClientDisconnected += new System.EventHandler<TcpServer.AsyncSocketServer.TcpServerClientDisconnectedEventArgs>(this.AsyncSocketTcpServer1_ClientDisconnected);
+            this.asyncTcpServer1.IsRunning = false;
+            this.asyncTcpServer1.Location = new System.Drawing.Point(325, 248);
+            this.asyncTcpServer1.Name = "asyncTcpServer1";
+            this.asyncTcpServer1.Size = new System.Drawing.Size(114, 18);
+            this.asyncTcpServer1.TabIndex = 5;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 129);
+            this.ClientSize = new System.Drawing.Size(451, 278);
+            this.Controls.Add(this.asyncTcpServer1);
             this.Controls.Add(this.Closebtn);
             this.Controls.Add(this.Openbtn);
-            this.Controls.Add(this.asyncSocketTcpServer1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -83,13 +76,9 @@
         }
 
         #endregion
-
-        /// <summary>
-        /// 异步服务器
-        /// </summary>
-        private AsyncTcpServer.AsyncSocketTcpServer asyncSocketTcpServer1;
         private System.Windows.Forms.Button Openbtn;
         private System.Windows.Forms.Button Closebtn;
+        private AsyncTcpServer.AsyncTcpServer asyncTcpServer1;
     }
 }
 

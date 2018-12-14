@@ -17,7 +17,7 @@ namespace TESTForm
     {
         public Form1()
         {
-            InitializeComponent();      
+            InitializeComponent();          
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -27,29 +27,29 @@ namespace TESTForm
 
         private void Openbtn_Click(object sender, EventArgs e)
         {
-            asyncSocketTcpServer1._ServerStart(IPAddress.Parse("127.0.0.1"));
-            Openbtn.Enabled = !asyncSocketTcpServer1.IsRunning;
-            Closebtn.Enabled= asyncSocketTcpServer1.IsRunning;
+            asyncTcpServer1._ServerStart();
+            Openbtn.Enabled = !asyncTcpServer1.IsRunning;
+            Closebtn.Enabled= asyncTcpServer1.IsRunning;
         }
 
         private void Closebtn_Click(object sender, EventArgs e)
         {
-            asyncSocketTcpServer1._ServerStop();
-            Openbtn.Enabled = !asyncSocketTcpServer1.IsRunning;
-            Closebtn.Enabled = asyncSocketTcpServer1.IsRunning;
+            asyncTcpServer1._ServerStop();
+            Openbtn.Enabled = !asyncTcpServer1.IsRunning;
+            Closebtn.Enabled = asyncTcpServer1.IsRunning;
         }
 
-        private void AsyncSocketTcpServer1_ClientConnected(object sender, TcpServerClientConnectedEventArgs e)
+        private void AsyncTcpServer1_ClientConnected(object sender, TcpServerClientConnectedEventArgs e)
         {
             Trace.WriteLine($"{e.Socket.RemoteEndPoint.ToString()}:已连接");
         }
 
-        private void AsyncSocketTcpServer1_ClientDisconnected(object sender, TcpServerClientDisconnectedEventArgs e)
+        private void AsyncTcpServer1_ClientDisconnected(object sender, TcpServerClientDisconnectedEventArgs e)
         {
             Trace.WriteLine($"{e.Socket.RemoteEndPoint.ToString()}:已断开");
         }
 
-        private void AsyncSocketTcpServer1_ReceiveData(object sender, TcpServerReceiveDatadEventArgs e)
+        private void AsyncTcpServer1_ReceiveData(object sender, TcpServerReceiveDatadEventArgs e)
         {
             Trace.WriteLine($"{e.Socket.RemoteEndPoint.ToString()}:收到{ Encoding.ASCII.GetString(e.Data)}");
             

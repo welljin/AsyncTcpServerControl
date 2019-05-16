@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setting));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.centerableTextBox1 = new IPControl.CenterableTextBox();
+            this.IPAddresstxt = new IPControl.IPAddressTextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.Porttxt = new System.Windows.Forms.TextBox();
-            this.IPAddresstxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,10 +44,10 @@
             // 
             this.panel1.AllowDrop = true;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.centerableTextBox1);
+            this.panel1.Controls.Add(this.IPAddresstxt);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.Porttxt);
-            this.panel1.Controls.Add(this.IPAddresstxt);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -57,6 +58,25 @@
             this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseDown);
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Panel1_MouseMove);
+            // 
+            // centerableTextBox1
+            // 
+            this.centerableTextBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.centerableTextBox1.ForeColor = System.Drawing.Color.Black;
+            this.centerableTextBox1.Location = new System.Drawing.Point(69, 65);
+            this.centerableTextBox1.Name = "centerableTextBox1";
+            this.centerableTextBox1.Size = new System.Drawing.Size(129, 26);
+            this.centerableTextBox1.TabIndex = 6;
+            // 
+            // IPAddresstxt
+            // 
+            this.IPAddresstxt.BackColor = System.Drawing.Color.Gainsboro;
+            this.IPAddresstxt.ForeColor = System.Drawing.Color.Black;
+            this.IPAddresstxt.Location = new System.Drawing.Point(68, 30);
+            this.IPAddresstxt.Name = "IPAddresstxt";
+            this.IPAddresstxt.Size = new System.Drawing.Size(129, 26);
+            this.IPAddresstxt.TabIndex = 5;
+            this.IPAddresstxt.Value = ((System.Net.IPAddress)(resources.GetObject("IPAddresstxt.Value")));
             // 
             // button2
             // 
@@ -85,28 +105,6 @@
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // Porttxt
-            // 
-            this.Porttxt.BackColor = System.Drawing.Color.Gainsboro;
-            this.Porttxt.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Porttxt.Location = new System.Drawing.Point(68, 66);
-            this.Porttxt.Name = "Porttxt";
-            this.Porttxt.Size = new System.Drawing.Size(129, 26);
-            this.Porttxt.TabIndex = 2;
-            this.Porttxt.Text = "11000";
-            this.Porttxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // IPAddresstxt
-            // 
-            this.IPAddresstxt.BackColor = System.Drawing.Color.Gainsboro;
-            this.IPAddresstxt.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IPAddresstxt.Location = new System.Drawing.Point(68, 31);
-            this.IPAddresstxt.Name = "IPAddresstxt";
-            this.IPAddresstxt.Size = new System.Drawing.Size(129, 26);
-            this.IPAddresstxt.TabIndex = 1;
-            this.IPAddresstxt.Text = "255.225.225.225";
-            this.IPAddresstxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
             // 
@@ -167,10 +165,10 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox Porttxt;
-        private System.Windows.Forms.TextBox IPAddresstxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private IPControl.IPAddressTextBox IPAddresstxt;
+        private IPControl.CenterableTextBox centerableTextBox1;
     }
 }

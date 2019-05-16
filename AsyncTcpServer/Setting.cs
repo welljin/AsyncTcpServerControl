@@ -65,7 +65,7 @@ namespace AsyncTcpServer
             try
             {
                 this.IPAddresstxt.Text = iniConfig.IniReadValue("Server", "IPAddress", inipath);
-                this.Porttxt.Text = iniConfig.IniReadValue("Server", "Port", inipath);
+                this.centerableTextBox1.SetText(iniConfig.IniReadValue("Server", "Port", inipath));
             }
             catch
             {
@@ -87,7 +87,7 @@ namespace AsyncTcpServer
 
             try
             {
-                int port = int.Parse(this.Porttxt.Text);
+                int port = int.Parse(this.centerableTextBox1.Text);
             }
             catch
             {
@@ -97,12 +97,12 @@ namespace AsyncTcpServer
 
             if (!iniConfig.ExistINIFile(inipath))//不存在
             {
-                iniConfig.CreateIniFile(inipath, this.IPAddresstxt.Text, int.Parse(this.Porttxt.Text));
+                iniConfig.CreateIniFile(inipath, this.IPAddresstxt.Text, int.Parse(this.centerableTextBox1.Text));
             }
             else
             {
                 iniConfig.IniWriteValue("Server","IPAddress", this.IPAddresstxt.Text, inipath);
-                iniConfig.IniWriteValue("Server", "Port", this.Porttxt.Text, inipath);
+                iniConfig.IniWriteValue("Server", "Port", this.centerableTextBox1.Text, inipath);
                 if(MessageBox.Show("配置修改成功，重启生效","配置",MessageBoxButtons.OK,MessageBoxIcon.Information)==DialogResult.OK)
                 {
                     Close();
